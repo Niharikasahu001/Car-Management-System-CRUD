@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/registration.css">
+    <title>Login Page</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/img/explore-your-city-favicon-white.png}">
+    <script src="https://kit.fontawesome.com/9fd25b2cb4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        input[type=text], input[type=password], input[type=email] {
+            width: 100%;
+            height: 20%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="login-section center">
+        <div>
+            <h1 style="color: #808080;">Welcome</h1>
+            <p style="color: #808080;">We are glad to see you back with us</p>
+        </div>
+        <form th:action="@{/do_login}" method="post">
+<!--            <div th:if="${session.message}" style="color:red;" th:classappend="${session.message.type}" role="alert">-->
+<!--                <p th:text="${session.message.content}"></p>-->
+<!--                <th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>-->
+<!--            </div>-->
+            <label for="email">
+                <input type="text" id="email" name="email" placeholder="Enter Your Email" required>
+            </label>
+            <br>
+            <label for="password">
+                <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+            </label>
+            <br>
+            <!-- Dropdown for Role -->
+            <label for="role-select">
+                <select id="role-select" name="role" class="dropdown">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+            </label>
+            <button style="color: #808080;" type="submit">Login</button>
+            <br>
+
+            <br>
+        </form>
+        <br>
+        <br>
+<!--        <img src="../img/side.jpg" class="side-img" alt="image">-->
+        <span style="margin-top: 45px;"><a href="#" style="color: blue;">Forgot password?</a></span>
+        <br>
+        <p>Don't have an Account? <a th:href="@{/signup}" style="color: blue;">Register</a></p>
+    </div>
+</div>
+
+</body>
+</html>
